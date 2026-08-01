@@ -32,15 +32,7 @@ npm run preview
 
 ## Resume
 
-Generate the ATS-friendly DOCX (and one-page PDF check via LibreOffice):
-
-```bash
-python3 -m venv .venv-resume
-.venv-resume/bin/pip install -r requirements-resume.txt
-.venv-resume/bin/python generate_resume.py
-```
-
-Outputs `Farhan_Tahmid_Resume.docx` / `.pdf`. The site serves `public/resume.pdf` in the Resume modal.
+The Resume modal serves `public/resume.pdf` (preview) and `public/Farhan-Tahmid-Resume.docx` (download).
 
 ## Deploy
 
