@@ -5,7 +5,8 @@ interface ResumeModalProps {
   onClose: () => void
 }
 
-const RESUME_URL = '/resume.pdf'
+const RESUME_PDF = '/resume.pdf'
+const RESUME_DOCX = '/Farhan_Tahmid_Resume.docx'
 
 export function ResumeModal({ open, onClose }: ResumeModalProps) {
   useEffect(() => {
@@ -30,12 +31,20 @@ export function ResumeModal({ open, onClose }: ResumeModalProps) {
       <div className="resume-modal">
         <div className="resume-modal-header">
           <span>Resume — Farhan Tahmid</span>
-          <button type="button" onClick={onClose} aria-label="Close">
-            ✕
-          </button>
+          <div className="resume-modal-actions">
+            <a className="resume-download" href={RESUME_DOCX} download="Farhan_Tahmid_Resume.docx">
+              Download DOCX
+            </a>
+            <a className="resume-download" href={RESUME_PDF} download="Farhan_Tahmid_Resume.pdf">
+              Download PDF
+            </a>
+            <button type="button" onClick={onClose} aria-label="Close">
+              ✕
+            </button>
+          </div>
         </div>
         <div className="resume-modal-body">
-          <iframe src={RESUME_URL} title="Farhan Tahmid Resume" />
+          <iframe src={RESUME_PDF} title="Farhan Tahmid Resume" />
         </div>
       </div>
     </div>
