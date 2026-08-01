@@ -32,8 +32,21 @@ npm run preview
 
 ## Resume
 
-The Resume modal serves `public/resume.pdf` (preview) and `public/Farhan-Tahmid-Resume.docx` (download).
+Source of truth in git: `public/Farhan-Tahmid-Resume.docx`.
+
+When that DOCX is pushed, GitHub Actions regenerates `public/resume.pdf`, and Vercel redeploys the site automatically.
+
+**Update from your Documents folder:**
+
+```bash
+./scripts/sync-resume.sh
+git add public/Farhan-Tahmid-Resume.docx public/resume.pdf
+git commit -m "Update resume"
+git push
+```
+
+Or edit/replace `public/Farhan-Tahmid-Resume.docx` directly, commit, and push (PDF syncs via CI).
 
 ## Deploy
 
-Ready for Vercel, Netlify, or GitHub Pages (static Vite build).
+Pushes to `master` deploy automatically on Vercel: https://farhantahmid.vercel.app
