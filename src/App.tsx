@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { Aurora } from './components/Aurora'
 import { Filters } from './components/Filters'
 import { ProjectCard } from './components/ProjectCard'
+import { QuickLinks } from './components/QuickLinks'
 import { ResumeModal } from './components/ResumeModal'
 import { Skills } from './components/Skills'
 import { projects } from './data/projects'
@@ -25,30 +26,15 @@ export default function App() {
           <div>
             <div className="role">Full-Stack Software Engineer · AI-Integrated Systems</div>
           </div>
-          <nav className="quicklinks">
-            <a
-              href="#resume"
-              onClick={(e) => {
-                e.preventDefault()
-                setResumeOpen(true)
-              }}
-            >
-              Resume
-            </a>
-            <a href="https://github.com/tahmidft" target="_blank" rel="noreferrer">
-              GitHub
-            </a>
-            <a href="https://linkedin.com/in/farhantahmid" target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
-            <a href="mailto:farhantahmid007@gmail.com">Email</a>
-          </nav>
+          <QuickLinks onResume={() => setResumeOpen(true)} />
         </header>
 
         <h1 className="hero-title">Farhan Tahmid</h1>
         <p className="stack-line">
-          Georgia Tech MS CS, AI Specialization — formerly an AWS Cloud Support Engineer, now
-          building full-stack, AI-integrated, and real-time systems end to end.
+          Georgia Tech MS CS (AI Specialization). Formerly a Cloud Support Engineer and Software
+          Engineer at AWS. This portfolio showcases production-ready applications I built end to
+          end, with live demos, to grow through hands-on experience in full-stack, AI-integrated,
+          and real-time systems.
         </p>
 
         <Skills />
@@ -67,11 +53,7 @@ export default function App() {
         </div>
 
         <footer>
-          Commit timestamps fetched live from the GitHub API on page load. Source of this page is on{' '}
-          <a href="https://github.com/tahmidft" target="_blank" rel="noreferrer">
-            GitHub
-          </a>
-          .
+          Made with <span aria-hidden="true">❤️</span> by Farhan Tahmid
         </footer>
       </div>
 
