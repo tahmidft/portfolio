@@ -1,5 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Aurora } from './components/Aurora'
+import { Education } from './components/Education'
+import { Experience } from './components/Experience'
 import { Filters } from './components/Filters'
 import { ProjectCard } from './components/ProjectCard'
 import { QuickLinks } from './components/QuickLinks'
@@ -39,6 +41,8 @@ export default function App() {
 
         <Skills />
 
+        <Experience />
+
         <Filters techs={allTech} active={activeFilter} onChange={setActiveFilter} />
 
         <div className="grid">
@@ -51,6 +55,8 @@ export default function App() {
             />
           ))}
         </div>
+
+        <Education />
 
         <footer>
           Made with <span aria-hidden="true">❤️</span> by Farhan Tahmid
