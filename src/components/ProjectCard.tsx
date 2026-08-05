@@ -52,39 +52,49 @@ export function ProjectCard({ project, index, hidden }: ProjectCardProps) {
       ref={ref}
       className={`card${visible ? ' visible' : ''}${hidden ? ' hidden-filtered' : ''}`}
       data-color={project.color}
+      data-key={project.key}
       style={{ transitionDelay: `${index * 70}ms` }}
       onMouseEnter={() => setBlobBoost(project.color, true)}
       onMouseLeave={() => setBlobBoost(project.color, false)}
     >
-      <div className="card-icon">{projectIcons[project.key]}</div>
-      <div className="card-head">
-        <h3>{project.title}</h3>
-        <div className="card-meta">
-          {updated ? (
-            <>
-              <span className="pulse-dot" />
-              <span>updated {updated}</span>
-            </>
-          ) : (
-            <span>{project.year}</span>
+      <div className="card-body">
+        <div className="card-icon">{projectIcons[project.key]}</div>
+        <div className="card-head">
+          <h3>{project.title}</h3>
+          <div className="card-meta">
+            {updated ? (
+              <>
+                <span className="pulse-dot" />
+                <span>updated {updated}</span>
+              </>
+            ) : (
+              <span>{project.year}</span>
+            )}
+          </div>
+        </div>
+        <p>{project.desc}</p>
+        <div className="tech">
+          {project.tech.map((t) => (
+            <span key={t}>{t}</span>
+          ))}
+        </div>
+        <div className="card-links">
+          {project.live && (
+            <a href={project.live} target="_blank" rel="noreferrer">
+              Live
+            </a>
           )}
+          <a href={project.github} target="_blank" rel="noreferrer">
+            GitHub
+          </a>
         </div>
       </div>
-      <p>{project.desc}</p>
-      <div className="tech">
-        {project.tech.map((t) => (
-          <span key={t}>{t}</span>
-        ))}
-      </div>
-      <div className="card-links">
-        {project.live && (
-          <a href={project.live} target="_blank" rel="noreferrer">
-            Live
-          </a>
-        )}
-        <a href={project.github} target="_blank" rel="noreferrer">
-          GitHub
-        </a>
+      <div className="card-preview">
+        <img
+          src={project.preview}
+          alt={`${project.title} dashboard preview`}
+          loading="lazy"
+        />
       </div>
     </article>
   )

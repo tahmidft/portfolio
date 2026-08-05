@@ -416,8 +416,10 @@ a {
 .card {
   --c: var(--green);
   position: relative;
-  border-radius: 18px 6px 18px 6px;
-  padding: 24px 26px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  padding: 0;
   background: linear-gradient(
     145deg,
     color-mix(in srgb, var(--c) 28%, var(--bg)) 0%,
@@ -435,6 +437,43 @@ a {
     border-color 0.3s ease,
     background 0.3s ease;
   overflow: hidden;
+}
+
+.card-body {
+  position: relative;
+  z-index: 1;
+  padding: 24px 26px 18px;
+}
+
+.card-preview {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  aspect-ratio: 16 / 10;
+  width: 100%;
+  min-height: 220px;
+  border-top: 1px solid color-mix(in srgb, var(--c) 28%, var(--border));
+  background: #05060a;
+  overflow: hidden;
+}
+
+.card-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top center;
+  background: #05060a;
+  transition: transform 0.45s ease;
+}
+
+.card:hover .card-preview img {
+  transform: scale(1.02);
+}
+
+.card[data-key='flame'] .card-preview img {
+  object-fit: cover;
+  object-position: top center;
 }
 
 .card.visible {

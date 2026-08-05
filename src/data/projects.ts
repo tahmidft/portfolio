@@ -10,6 +10,8 @@ export interface Project {
   tech: string[]
   live: string | null
   github: string
+  /** Dashboard screenshot under public/project-previews */
+  preview: string
 }
 
 export const projects: Project[] = [
@@ -23,6 +25,7 @@ export const projects: Project[] = [
     tech: ['React', 'TypeScript', 'FastAPI', 'Gemini', 'Supabase', 'Render'],
     live: 'https://clearclause.vercel.app',
     github: 'https://github.com/tahmidft/clear-clause',
+    preview: '/project-previews/clearclause.png',
   },
   {
     key: 'nexuspm',
@@ -34,6 +37,7 @@ export const projects: Project[] = [
     tech: ['NestJS', 'Angular', 'TypeORM', 'Neon', 'Docker', 'JWT'],
     live: 'https://nexus-pm-five.vercel.app',
     github: 'https://github.com/tahmidft/nexus-pm',
+    preview: '/project-previews/nexuspm.png',
   },
   {
     key: 'cour',
@@ -45,6 +49,7 @@ export const projects: Project[] = [
     tech: ['React', 'Vite', 'Vercel', 'Supabase', 'AniList GraphQL', 'Resend'],
     live: 'https://cour-anime.vercel.app',
     github: 'https://github.com/tahmidft/cour',
+    preview: '/project-previews/cour.png',
   },
   {
     key: 'flame',
@@ -56,6 +61,7 @@ export const projects: Project[] = [
     tech: ['C++17', 'FFTW3', 'ALSA', 'Flask', 'React', 'Raspberry Pi'],
     live: null,
     github: 'https://github.com/tahmidft/realtime-fire-alarm-detector',
+    preview: '/project-previews/flame.png',
   },
 ]
 
