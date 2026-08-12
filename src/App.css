@@ -560,7 +560,8 @@ a {
   margin-bottom: 15px;
 }
 
-.tech span {
+.tech span,
+.tech a {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.7rem;
   padding: 4px 10px;
@@ -568,6 +569,23 @@ a {
   background: rgba(0, 0, 0, 0.4);
   color: var(--fg);
   border: 1px solid color-mix(in srgb, var(--c) 50%, transparent);
+  text-decoration: none;
+}
+
+.tech a {
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.tech a:hover {
+  background: color-mix(in srgb, var(--c) 22%, rgba(0, 0, 0, 0.4));
+  border-color: color-mix(in srgb, var(--c) 75%, transparent);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--c) 40%, transparent);
+  transform: translateY(-1px);
 }
 
 .card-links {
@@ -976,7 +994,8 @@ footer {
   gap: 6px;
 }
 
-.skill-chips span {
+.skill-chips span,
+.skill-chips a {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.72rem;
   padding: 4px 9px;
@@ -985,6 +1004,7 @@ footer {
   color: var(--fg);
   border: 1px solid color-mix(in srgb, var(--c) 35%, transparent);
   cursor: default;
+  text-decoration: none;
   transition:
     color 0.2s ease,
     background 0.2s ease,
@@ -993,7 +1013,12 @@ footer {
     transform 0.2s ease;
 }
 
-.skill-chips span:hover {
+.skill-chips a {
+  cursor: pointer;
+}
+
+.skill-chips span:hover,
+.skill-chips a:hover {
   color: var(--fg);
   background: color-mix(in srgb, var(--c) 22%, rgba(0, 0, 0, 0.28));
   border-color: color-mix(in srgb, var(--c) 70%, transparent);
@@ -1007,11 +1032,13 @@ footer {
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
   }
 
-  .skill-chips span {
+  .skill-chips span,
+  .skill-chips a {
     transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
   }
 
-  .skill-chips span:hover {
+  .skill-chips span:hover,
+  .skill-chips a:hover {
     transform: none;
   }
 }

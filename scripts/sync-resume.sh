@@ -1,25 +1,30 @@
 #!/usr/bin/env bash
-# Copy your local resume into the repo and regenerate the PDF for the site.
+# Copy resume DOCX + PDF into the repo for the site (no LibreOffice reformat).
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-SRC="${1:-$HOME/Documents/Farhan-Tahmid-Resume.docx}"
-DEST="$ROOT/public/Farhan-Tahmid-Resume.docx"
+SRC_DIR="${RESUME_DIR:-$HOME/Sync/Resume & Cover Letter/Resume 2026}"
+SRC_DOCX="${1:-$SRC_DIR/Farhan-Tahmid-Resume.docx}"
+SRC_PDF="${2:-$SRC_DIR/Farhan-Tahmid-Resume.pdf}"
 
-if [[ ! -f "$SRC" ]]; then
-  echo "Resume not found: $SRC" >&2
+DEST_DOCX="$ROOT/public/Farhan-Tahmid-Resume.docx"
+DEST_PDF="$ROOT/public/resume.pdf"
+DEST_PDF_NAMED="$ROOT/public/Farhan-Tahmid-Resume.pdf"
+
+if [[ ! -f "$SRC_DOCX" ]]; then
+  echo "Resume DOCX not found: $SRC_DOCX" >&2
+  exit 1
+fi
+if [[ ! -f "$SRC_PDF" ]]; then
+  echo "Resume PDF not found: $SRC_PDF" >&2
+  echo "Export PDF from Word next to the DOCX (same name), then re-run." >&2
   exit 1
 fi
 
-cp "$SRC" "$DEST"
-echo "Copied $SRC -> $DEST"
+cp "$SRC_DOCX" "$DEST_DOCX"
+cp "$SRC_PDF" "$DEST_PDF"
+cp "$SRC_PDF" "$DEST_PDF_NAMED"
 
-if command -v libreoffice >/dev/null 2>&1; then
-  libreoffice --headless --convert-to pdf --outdir "$ROOT/public" "$DEST"
-  mv -f "$ROOT/public/Farhan-Tahmid-Resume.pdf" "$ROOT/public/resume.pdf"
-  echo "Wrote $ROOT/public/resume.pdf"
-else
-  echo "LibreOffice not found; commit the DOCX and let GitHub Actions generate the PDF."
-fi
-
-echo "Next: git add public/Farhan-Tahmid-Resume.docx public/resume.pdf && git commit && git push"
+echo "Copied $SRC_DOCX -> $DEST_DOCX"
+echo "Copied $SRC_PDF -> $DEST_PDF (and $DEST_PDF_NAMED)"
+echo "Next: git add public/Farhan-Tahmid-Resume.docx public/Farhan-Tahmid-Resume.pdf public/resume.pdf && git commit && git push"

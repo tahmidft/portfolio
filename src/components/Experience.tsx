@@ -1,5 +1,6 @@
 import { useRef, type MouseEvent } from 'react'
 import { awsExperience } from '../data/experience'
+import { skillLinks } from '../data/skillLinks'
 
 function RoleBlock({
   title,
@@ -52,9 +53,15 @@ function RoleBlock({
         ))}
       </ul>
       <div className="tech">
-        {tech.map((t) => (
-          <span key={t}>{t}</span>
-        ))}
+        {tech.map((t) => {
+          const href = skillLinks[t]
+          if (!href) return <span key={t}>{t}</span>
+          return (
+            <a key={t} href={href} target="_blank" rel="noreferrer" title={`Learn more about ${t}`}>
+              {t}
+            </a>
+          )
+        })}
       </div>
     </div>
   )

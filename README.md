@@ -32,21 +32,21 @@ npm run preview
 
 ## Resume
 
-Source of truth in git: `public/Farhan-Tahmid-Resume.docx`.
+Source of truth (edit in Word, keep both files together):
 
-When that DOCX is pushed, GitHub Actions regenerates `public/resume.pdf`, and Vercel redeploys the site automatically.
+`~/Sync/Resume & Cover Letter/Resume 2026/Farhan-Tahmid-Resume.docx`  
+`~/Sync/Resume & Cover Letter/Resume 2026/Farhan-Tahmid-Resume.pdf`
 
-**Update from your Documents folder:**
+Copy both into the site (does **not** reformat with LibreOffice):
 
 ```bash
 ./scripts/sync-resume.sh
-git add public/Farhan-Tahmid-Resume.docx public/resume.pdf
+git add public/Farhan-Tahmid-Resume.docx public/Farhan-Tahmid-Resume.pdf public/resume.pdf
 git commit -m "Update resume"
 git push
 ```
 
-Or edit/replace `public/Farhan-Tahmid-Resume.docx` directly, commit, and push (PDF syncs via CI).
-
+The Resume modal previews `public/resume.pdf` and offers DOCX/PDF downloads.
 ## Deploy
 
 Pushes to `master` deploy automatically on Vercel: https://farhantahmid.vercel.app

@@ -1,0 +1,55 @@
+/** Official docs/homepages for skill chips (Skills section). */
+export const skillLinks: Record<string, string> = {
+  TypeScript: 'https://www.typescriptlang.org/',
+  JavaScript: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+  Python: 'https://www.python.org/',
+  'C++': 'https://isocpp.org/',
+  SQL: 'https://www.w3schools.com/sql/',
+
+  React: 'https://react.dev/',
+  Angular: 'https://angular.dev/',
+  Vite: 'https://vite.dev/',
+  'Tailwind CSS': 'https://tailwindcss.com/',
+  'TanStack Query': 'https://tanstack.com/query',
+
+  NestJS: 'https://nestjs.com/',
+  FastAPI: 'https://fastapi.tiangolo.com/',
+  Flask: 'https://flask.palletsprojects.com/',
+  'Node.js': 'https://nodejs.org/',
+  'REST APIs': 'https://restfulapi.net/',
+
+  AWS: 'https://aws.amazon.com/',
+  Vercel: 'https://vercel.com/',
+  Render: 'https://render.com/',
+  Docker: 'https://www.docker.com/',
+  'GitHub Actions': 'https://docs.github.com/en/actions',
+  'Raspberry Pi': 'https://www.raspberrypi.com/',
+
+  PostgreSQL: 'https://www.postgresql.org/',
+  Supabase: 'https://supabase.com/',
+  TypeORM: 'https://typeorm.io/',
+  Neon: 'https://neon.tech/',
+  JWT: 'https://jwt.io/',
+
+  'Gemini API': 'https://ai.google.dev/gemini-api/docs',
+  FFTW3: 'https://www.fftw.org/',
+  ALSA: 'https://www.alsa-project.org/',
+  'Socket.io': 'https://socket.io/',
+  Resend: 'https://resend.com/',
+  'AniList GraphQL': 'https://docs.anilist.co/',
+
+  // Experience / AWS
+  'AWS Bedrock': 'https://aws.amazon.com/bedrock/',
+  LangChain: 'https://www.langchain.com/',
+  Neptune: 'https://aws.amazon.com/neptune/',
+  Lambda: 'https://aws.amazon.com/lambda/',
+  CDK: 'https://aws.amazon.com/cdk/',
+  S3: 'https://aws.amazon.com/s3/',
+  'API Gateway': 'https://aws.amazon.com/api-gateway/',
+  Cognito: 'https://aws.amazon.com/cognito/',
+  AppSync: 'https://aws.amazon.com/appsync/',
+  'Step Functions': 'https://aws.amazon.com/step-functions/',
+  IAM: 'https://aws.amazon.com/iam/',
+  VPC: 'https://aws.amazon.com/vpc/',
+  'Smithy IDL': 'https://smithy.io/',
+}

@@ -1,5 +1,6 @@
 import { useRef, type MouseEvent } from 'react'
 import { skillCategories } from '../data/projects'
+import { skillLinks } from '../data/skillLinks'
 
 function SkillCard({
   title,
@@ -47,9 +48,21 @@ function SkillCard({
         <h4>{title}</h4>
       </div>
       <div className="skill-chips">
-        {skills.map((skill) => (
-          <span key={skill}>{skill}</span>
-        ))}
+        {skills.map((skill) => {
+          const href = skillLinks[skill]
+          if (!href) return <span key={skill}>{skill}</span>
+          return (
+            <a
+              key={skill}
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+              title={`Learn more about ${skill}`}
+            >
+              {skill}
+            </a>
+          )
+        })}
       </div>
     </div>
   )
