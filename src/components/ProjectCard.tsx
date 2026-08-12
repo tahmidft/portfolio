@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import type { Project, ProjectColor } from '../data/projects'
 import { projectIcons } from '../data/icons'
+import { skillLinks } from '../data/skillLinks'
 import { timeAgo } from '../utils/timeAgo'
 
 interface ProjectCardProps {
@@ -74,9 +75,15 @@ export function ProjectCard({ project, index, hidden }: ProjectCardProps) {
         </div>
         <p>{project.desc}</p>
         <div className="tech">
-          {project.tech.map((t) => (
-            <span key={t}>{t}</span>
-          ))}
+          {project.tech.map((t) => {
+            const href = skillLinks[t]
+            if (!href) return <span key={t}>{t}</span>
+            return (
+              <a key={t} href={href} target="_blank" rel="noreferrer" title={`Learn more about ${t}`}>
+                {t}
+              </a>
+            )
+          })}
         </div>
         <div className="card-links">
           {project.live && (

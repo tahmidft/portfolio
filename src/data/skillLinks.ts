@@ -4,6 +4,7 @@ export const skillLinks: Record<string, string> = {
   JavaScript: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
   Python: 'https://www.python.org/',
   'C++': 'https://isocpp.org/',
+  'C++17': 'https://isocpp.org/',
   SQL: 'https://www.w3schools.com/sql/',
 
   React: 'https://react.dev/',
@@ -32,6 +33,7 @@ export const skillLinks: Record<string, string> = {
   JWT: 'https://jwt.io/',
 
   'Gemini API': 'https://ai.google.dev/gemini-api/docs',
+  Gemini: 'https://ai.google.dev/gemini-api/docs',
   FFTW3: 'https://www.fftw.org/',
   ALSA: 'https://www.alsa-project.org/',
   'Socket.io': 'https://socket.io/',
